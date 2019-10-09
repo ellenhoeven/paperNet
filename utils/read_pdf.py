@@ -7,6 +7,13 @@ from pdfminer.pdfpage import PDFPage
 
 
 def extract_text_from_pdf(pdf_path):
+    """
+    Extracts text from a pdf document
+
+    Parameters: pdf_path (string) of where the document is located
+
+    Returns: text (string)
+    """
     resource_manager = PDFResourceManager()
     fake_file_handle = io.BytesIO()
     converter = TextConverter(resource_manager, fake_file_handle)
@@ -26,5 +33,3 @@ def extract_text_from_pdf(pdf_path):
 
     if text:
         return text
-
-
